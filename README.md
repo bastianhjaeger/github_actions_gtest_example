@@ -6,7 +6,7 @@ Example on how to integrate gtest test into [github actions](https://github.com/
 
 
 
-While there exist other links in the www on how to use it (which did not work for my setup), this repo quickly shows how to add a workflow / action to github that executes you gtest tests and responses with a simple ok / not-ok to highlight on github.
+While there exist other links in the www on how to use it (which did not work for my setup), this repo quickly shows how to add a workflow / action to github that executes your gtest tests and responses with a simple ok / not-ok to highlight on github.
 
 It is plain and simple, but maybe it helps you. 
 
