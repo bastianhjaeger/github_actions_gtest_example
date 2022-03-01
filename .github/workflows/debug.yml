@@ -28,3 +28,23 @@ jobs:
         cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Werror" ..
         make
         /home/runner/work/github_actions_gtest_example/github_actions_gtest_example/build/test/github_actions_gtest_example.test
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+    - name: Download, configure and install gtest
+      run: |
+        wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz
+        tar xf release-1.10.0.tar.gz
+        cd googletest-release-1.10.0
+        cmake -DBUILD_SHARED_LIBS=OFF .
+        sudo make install
+    - name: Checkout the project
+      uses: actions/checkout@v1
+    - name: Do some tests
+      run: |
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_FLAGS="-Werror" ..
+        VERBOSE=1 make
+        /home/runner/work/github_actions_gtest_example/github_actions_gtest_example/build/test/github_actions_gtest_example.test
