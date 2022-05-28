@@ -1,8 +1,8 @@
 name: github_actions_gtest_example-Release
 
-on: workflow_dispatch
-
 on:
+  workflow_dispatch:
+    branches: [ master ]
   push:
     branches: [ master ]
   pull_request:
