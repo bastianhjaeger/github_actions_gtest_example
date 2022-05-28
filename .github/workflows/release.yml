@@ -1,5 +1,7 @@
 name: github_actions_gtest_example-Release
 
+on: workflow_dispatch
+
 on:
   push:
     branches: [ master ]
